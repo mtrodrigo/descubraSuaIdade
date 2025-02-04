@@ -6,14 +6,24 @@ function App() {
   const [ano, setAno] = useState<number>()
   const [idade, setIdade] = useState<number>()
   const [nomeExibir, setNomeExibir] = useState<string>("")
+  const [checkbox, setCheckBox] = useState<boolean>(false)
     
   const dataAtual = new Date()
   const anoAtual = dataAtual.getFullYear()
  
   const gerarIdade = () => {
-    const idadeGerada = ano ? anoAtual - ano : 0;
-    setIdade(idadeGerada)
-    setNomeExibir(nome)
+    if(checkbox === true){
+      const idadeGerada = ano ? (anoAtual - ano) - 1 : 0;
+      setIdade(idadeGerada)
+      setNomeExibir(nome)
+      setNome("")
+    }
+    else{
+      const idadeGerada = ano ? anoAtual - ano : 0;
+      setIdade(idadeGerada)
+      setNomeExibir(nome)
+      setNome("")
+    }
   }
 
   return (
@@ -37,6 +47,13 @@ function App() {
           type="text"
           placeholder='Digite ano que você nasceu'
           />
+          </div>
+          <div className='checkbox_container'>
+            <label>Já fe aniversário esse ano?</label>
+            <input type="checkbox" 
+            checked={checkbox} 
+            onChange={ (e) => setCheckBox(e.target.checked)}
+            />
           </div>
           <div className='btn_container'>
             <button onClick={gerarIdade}>Descobrir idade</button>

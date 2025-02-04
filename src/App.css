@@ -54,3 +54,12 @@
   font-weight: bold;
   cursor: pointer;
 }
+.checkbox_container{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.checkbox_container label{
+  font-size: 12px;
+  margin-right: 5px;
+}
