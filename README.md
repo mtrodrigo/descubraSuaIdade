@@ -29,9 +29,10 @@ Para rodar este projeto localmente, siga os passos abaixo:
 ```mermaid
 pie
    title Linguagens Utilizadas
-   "JavaScript": 70
-   "HTML": 15
-   "CSS": 15
+   "JavaScript": 17.8
+   "TypeScript": 46.3
+   "HTML": 8.9
+   "CSS": 27
 ```
 
 ## Contato
