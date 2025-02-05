@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
   const [nome, setNome] = useState<string>("")
-  const [ano, setAno] = useState<number>()
+  const [ano, setAno] = useState<number | string>()
   const [idade, setIdade] = useState<number>()
   const [nomeExibir, setNomeExibir] = useState<string>("")
   const [checkbox, setCheckBox] = useState<boolean>(false)
@@ -13,16 +13,18 @@ function App() {
  
   const gerarIdade = () => {
     if(checkbox === true){
-      const idadeGerada = ano ? (anoAtual - ano) - 1 : 0;
+      const idadeGerada = ano ? anoAtual - Number(ano) : 0;
       setIdade(idadeGerada)
       setNomeExibir(nome)
       setNome("")
+      setAno("")
     }
     else{
-      const idadeGerada = ano ? anoAtual - ano : 0;
+      const idadeGerada = ano ? (anoAtual - Number(ano)) - 1 : 0;
       setIdade(idadeGerada)
       setNomeExibir(nome)
       setNome("")
+      setAno("")
     }
   }
 
